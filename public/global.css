@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+
+:root {
+  --focus: darkred;
+  --dark-gray: #555;
+  --gray: #999;
+  --light-gray: #ddd;
+  --lighter-gray: #f4f4f4;
+  --link: #008fa1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Slab', sans-serif;
+  color: var(--dark-gray);
+}
+
+*, *::before, *::after {
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-sizing: border-box;
+  outline: none;
+  vertical-align: baseline;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--link);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--gray);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5rem 0.75rem;
+  margin: 0 0 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input::placeholder {
+  color: var(--light-gray);
+}
+
+button {
+  background-color: var(--lighter-gray);
+  outline: none;
+}
+button:active {
+  background-color: var(--light-gray);
+}
+button:focus {
+  border-color: var(--dark-gray);
+}
+
+hr {
+  border: 1px solid var(--light-gray);
+  margin: 2rem auto;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
