@@ -2,13 +2,13 @@
 
 import {onMount} from 'svelte'
 
-export let placeholder = 'Enter search text'
-export let id = 'autocomplete'
-export let label = null
-export let exact = false // search must fall within the data list
-export let minChars = 2
-export let maxMatches = 7
-export let fromStart = false
+export let placeholder = 'Enter search text'  // placeholder text
+export let id = 'autocomplete'  // field id
+export let label = null  // form label
+export let exact = false  // search must fall within the data list
+export let minChars = 2  // characters to receive before searching
+export let maxMatches = 7  // maximum number of matches to return
+export let fromStart = false  // search from the start of the string
 
 let search = ''
 let matches = []
@@ -29,10 +29,10 @@ async function searchStates() {
     return
   }
 
-  // * Customize as needed for data set,
-  // * get matches to current text input
   const searchString = (fromStart) ?  `^${search}` : `${search}`
 
+  // * Customize as needed for data set,
+  // * get matches to current text input
   matches = data.filter(item => {
     const regex = new RegExp(searchString, 'gi')
     return item.name.match(regex) || item.abbr.match(regex)
@@ -121,6 +121,7 @@ function onKeyDown (event) {
   type="text"
   id={id}
   placeholder={placeholder}
+  autocomplete="off"
   bind:value={search}
   on:input={searchStates}
   on:keydown={onKeyDown}

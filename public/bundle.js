@@ -871,7 +871,7 @@ var app = (function () {
     }
 
     var app = new App({
-      target: document.body
+      target: document.querySelector('#app')
     });
 
     var main = {
